@@ -14,6 +14,7 @@ export default class FindAPlaceRouter extends Component{
     {name: "ERC"},
     {name: "Giblin"},
     {name: "Law"},
+    {name: "Test"},
   ];
 
   //Item separator

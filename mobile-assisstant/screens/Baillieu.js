@@ -1,30 +1,26 @@
 import * as React from 'react';
-import { Text, View, StyleSheet, WebView, ScrollView, Dimensions, StatusBar} from 'react-native';
-import Constants from 'expo-constants';
+import {
+  ScrollView,
+} from 'react-native';
+import { WebView } from 'react-native-webview';
+
+import seatGenerator from '../components/SeatGenerator';
 
 export default class Baillieu extends React.Component {
   state = {
-    loaded: false,
-    content: 'default',
+    loading: [],
   };
 
+  wegets = [
+    'https://l.vemcount.com/embed/widget/UxRJHzLxLJ4nJtS', // overview
+    'https://l.vemcount.com/embed/widget/DNgAEb69k9r7nTE', // basement
+    'https://l.vemcount.com/embed/widget/tP7SWVwgRqvnEfK', // ground floor
+    'https://l.vemcount.com/embed/widget/Dk5wj8eCRm5gH7j', // level 1
+    'https://l.vemcount.com/embed/widget/YdNNA8RBcQym2KN', // level 2
+    'https://l.vemcount.com/embed/widget/MnkQs3NWEc5VoCI', // level 3
+  ];
+
   render() {
-    let screenWidth = Dimensions.get('window').width;
-    let screenHeight = Dimensions.get('window').height;
-    //including only the biomedicion webset
-    // the url could be found at https://library.unimelb.edu.au/services/find-a-seat/brownless-biomed-study-spaces
-    // for biomed detail and other overviews
-    return (
-      <ScrollView>
-        <Text style={{paddingTop:20}}>  </Text>
-        <WebView
-          source={{ uri: "https://l.vemcount.com/embed/widget/UxRJHzLxLJ4nJtS" }}
-          style={{
-            marginTop: 20,
-            height: 120,
-          }}
-        />
-      </ScrollView>
-    );
+    return <ScrollView>{seatGenerator(this, this.wegets)}</ScrollView>;
   }
 }

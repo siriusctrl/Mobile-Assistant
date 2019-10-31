@@ -10,6 +10,7 @@ import Baillieu from "./screens/Baillieu";
 import Giblin from "./screens/Giblin";
 import Law from "./screens/Law";
 import ERC from "./screens/ERC";
+import Test from "./screens/Test";
 
 const handleCustomTransition = ({ screens }) => {
   return fromRight(500);
@@ -24,6 +25,7 @@ const AppNavigator = createStackNavigator(
     Giblin:{screen:Giblin},
     Law:{screen:Law},
     ERC:{screen:ERC},
+    Test:{screen:Test}
   }, 
   {
     initialRouteName: "FindAPlaceRouter",
